@@ -3,5 +3,5 @@
 __pycache__
 todolistvenv
 db.sqlite3
-/static
+# /static
 .DS_Store
