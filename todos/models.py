@@ -11,7 +11,7 @@ class Todo(models.Model):
     completed = models.BooleanField(default=False)
 
     class Meta:
-        ordering = ["-priority"]
+        ordering = ["priority"]
 
     # timestamp = models.DateField(auto_now_add=True, auto_now=False)
     def is_expired(self):

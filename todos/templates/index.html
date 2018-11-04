@@ -48,17 +48,26 @@
                             <th class="text-center" scope="row">{{ forloop.counter }}</th>
                             <td class="text-center">{{ todo.title }}</td>
                             {% if todo.is_expired %}
-                            <td class="text-center" style="color:red;font-style: italic;text-decoration: underline">{{todo.deadline| date:"Y-m-d"}}</td>
+                            <td class="text-center" style="color:red;font-style: italic;text-decoration: underline">
+                                {{todo.deadline| date:"Y-m-d"}}
+                            </td>
                             {% else %}
                             <td class="text-center">{{todo.deadline| date:"Y-m-d"}}</td>
                             {% endif %}
-                            <td class="text-center">{{ todo.priority }}</td>
+                            <td class="text-center">
+                                {{ todo.priority }}
+                                <a href="{% url 'ptyup' pk=todo.pk %}"><span style="font-weight: 800; font-size: large; color: red;">U</span></a>
+                                <a href="{% url 'ptydown' pk=todo.pk %}"><span style="font-weight: 800; font-size: large; color: blue;">D</span></a>
+                                <!-- <button type="button" id="{{todo.pk}}" onclick="ptyUp(id)" class="glyphicon glyphicon-arrow-up"></button>
+                                <button type="button" id="{{todo.pk}}" onclick="ptyDown(id)" class="glyphicon glyphicon-arrow-down"></button> -->
+                            </td>
 
-                            {% if todo.completed %}
-                            <td class="text-center">완료</td>
-                            {% else %}
-                            <td class="text-center">미완료</td>
-                            {% endif %}
+                            <td class="text-center">
+                                <a href="{% url 'complete' pk=todo.pk %}">
+                                    <input type="checkbox" id="{{todo.pk}}" value="true" onclick="checkbox_func(id)">
+                                </a>
+                            </td>
+
 
                             <td class="text-center">
                                 <button type="button" class="read-todo btn btn-sm btn-primary" data-id="{% url 'read_todo' todo.pk %}">
@@ -103,17 +112,25 @@
                             <th class="text-center" scope="row">{{ forloop.counter }}</th>
                             <td class="text-center" style="text-decoration-line:line-through">{{ todo.title }}</td>
                             {% if todo.is_expired %}
-                            <td class="text-center" style="color:red;font-style: italic;text-decoration: underline">{{todo.deadline| date:"Y-m-d"}}</td>
+                            <td class="text-center" style="color:red;font-style: italic;text-decoration: underline">
+                                {{todo.deadline| date:"Y-m-d"}}
+                            </td>
                             {% else %}
                             <td class="text-center">{{todo.deadline| date:"Y-m-d"}}</td>
                             {% endif %}
-                            <td class="text-center">{{ todo.priority }}</td>
+                            <td class="text-center">
+                                    {{ todo.priority }}
+                                    <a href="{% url 'ptyup' pk=todo.pk %}"><span style="font-weight: 800; font-size: large; color: red;">U</span></a>
+                                    <a href="{% url 'ptydown' pk=todo.pk %}"><span style="font-weight: 800; font-size: large; color: blue;">D</span></a>
+                                    <!-- <button type="button" id="{{todo.pk}}" onclick="ptyUp(id)" class="glyphicon glyphicon-arrow-up"></button>
+                                    <button type="button" id="{{todo.pk}}" onclick="ptyDown(id)" class="glyphicon glyphicon-arrow-down"></button> -->
+                                </td>
 
-                            {% if todo.completed %}
-                            <td class="text-center">완료</td>
-                            {% else %}
-                            <td class="text-center">미완료</td>
-                            {% endif %}
+                            <td class="text-center">
+                                <a href="{% url 'complete' pk=todo.pk %}">
+                                    <input type="checkbox" id="{{todo.pk}}" value="true" checked="checked" onclick="checkbox_func(id)">
+                                </a>
+                            </td>
 
                             <td class="text-center">
                                 <button type="button" class="read-todo btn btn-sm btn-primary" data-id="{% url 'read_todo' todo.pk %}">
@@ -163,5 +180,15 @@
             $(this).modalForm({ formURL: $(this).data('id') });
         });
     });
+
+    function checkbox_func(id) {
+        location.href = "complete/" + id;
+    }
+    // function ptyDown(id){
+    //     location.href = "ptydown/" + id;
+    // }
+    // function ptyUp(id){
+    //     location.href = "ptyup/" + id;
+    // }
 </script>
 {% endblock extrascripts %}
