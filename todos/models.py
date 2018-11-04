@@ -10,6 +10,9 @@ class Todo(models.Model):
     priority = models.PositiveIntegerField(default=1)
     completed = models.BooleanField(default=False)
 
+    class Meta:
+        ordering = ["-priority"]
+
     # timestamp = models.DateField(auto_now_add=True, auto_now=False)
     def is_expired(self):
         if self.deadline is not None:

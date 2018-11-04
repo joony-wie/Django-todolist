@@ -7,7 +7,6 @@ from .forms import TodoForm
 from .models import Todo
 from bootstrap_modal_forms.mixins import PassRequestMixin, DeleteAjaxMixin
 
-
 class Index(generic.ListView):
     model = Todo
     context_object_name = 'todos'
