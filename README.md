@@ -16,6 +16,7 @@ Installation
 if you don't have python3-venv
 
     $ sudo apt-get install python3-venv
+    
     $ python3 -m venv todolistvenv
     
 ### 3. Activate you virtual enviroment
