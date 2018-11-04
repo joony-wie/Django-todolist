@@ -48,7 +48,7 @@
                             <th class="text-center" scope="row">{{ forloop.counter }}</th>
                             <td class="text-center">{{ todo.title }}</td>
                             {% if todo.is_expired %}
-                            <td class="text-center" style="color:red">{{todo.deadline| date:"Y-m-d"}}</td>
+                            <td class="text-center" style="color:red;font-style: italic;text-decoration: underline">{{todo.deadline| date:"Y-m-d"}}</td>
                             {% else %}
                             <td class="text-center">{{todo.deadline| date:"Y-m-d"}}</td>
                             {% endif %}
@@ -101,9 +101,9 @@
                         {% if todo.completed %}
                         <tr>
                             <th class="text-center" scope="row">{{ forloop.counter }}</th>
-                            <td class="text-center">{{ todo.title }}</td>
+                            <td class="text-center" style="text-decoration-line:line-through">{{ todo.title }}</td>
                             {% if todo.is_expired %}
-                            <td class="text-center" style="color:red">{{todo.deadline| date:"Y-m-d"}}</td>
+                            <td class="text-center" style="color:red;font-style: italic;text-decoration: underline">{{todo.deadline| date:"Y-m-d"}}</td>
                             {% else %}
                             <td class="text-center">{{todo.deadline| date:"Y-m-d"}}</td>
                             {% endif %}
