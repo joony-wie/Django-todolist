@@ -7,7 +7,7 @@ Installation
 
 1. Clone ``Django-todolist``
 
-    $ git clone https://github.com/encia200/Django-todolist.git
+    ''$ git clone https://github.com/encia200/Django-todolist.git''
     
     $ cd Django-todolist
 
