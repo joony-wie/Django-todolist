@@ -12,8 +12,8 @@ Installation
     $ cd Django-todolist
 
 ### 2. Create Virtual enviroment
-    
-    if you don't have python3-venv 
+
+if you don't have python3-venv
 
     $ sudo apt-get install python3-venv
     $ python3 -m venv todolistvenv
@@ -24,11 +24,11 @@ Installation
 
 ### 4. Install requirements.txt
 
-    Before installing Django, you should make sure you have the latest version of ``pip``
+Before installing Django, you should make sure you have the latest version of ``pip``
     
     $ python3 -m pip install --upgrade pip
     
-    and then,
+and then,
     
     $ pip install -r requirements.txt
     
