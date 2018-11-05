@@ -1,6 +1,6 @@
 Django Todolist
 ============================
-윈터코딩 개발 과제 웹 - TODO list 만들기(Django)
+윈터코딩 개발 과제 웹 - TODO list (Django)
 
 소스코드 : https://github.com/encia200/Django-todolist/
 
